@@ -1,21 +1,30 @@
-//classes in javascript a class is a blueprint of an object in javascript that contains properties and methods
-class rectangle {
-    constructor(width, height, color) {
-        this.width = width;
-        this.height = height;
-        this.color = color;
-    }
-    area(){
-        const area = this.width * this.height;
-        console.log(area);
-    }
-    color(){
-        console.log("color is " + this.color);
-    }
-}
 
-const react = new rectangle(10, 20, "red");
-const area = react.area();
-console.log(area);
-const color = react.color();
-console.log(color);
+// promises
+
+
+// function setTimeoutPromisified(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+//   }
+//   function callback() {
+//       console.log("3 seconds have passed");
+//   }
+//   setTimeoutPromisified(3000).then(callback)
+
+console.log("----top of the file-----")
+function  readthefile(resolve) {
+    console.log("readfil compeleted")
+    setTimeout(() => {
+        console.log("callback based settimeout compeleted")
+        resolve();
+    }, 1000);
+}
+function  setTimeoutPromisified() {
+    console.log("settimout called here")
+    return new Promise(readthefile)
+}
+  let p = setTimeoutPromisified();
+p.then(callback);
+function  callback() {
+    console.log("timer is done");
+}
+console.log("----end of the file----")
