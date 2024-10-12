@@ -65,3 +65,8 @@ function greetUser() {
 
 // Call the function to run the input prompts and greet the user
 greetUser();
+
+
+function check(arr) {
+    
+}
