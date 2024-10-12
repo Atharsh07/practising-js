@@ -2,13 +2,13 @@
 // promises
 
 
-// function setTimeoutPromisified(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-//   }
-//   function callback() {
-//       console.log("3 seconds have passed");
-//   }
-//   setTimeoutPromisified(3000).then(callback)
+function setTimeoutPromisified(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  function callback() {
+      console.log("3 seconds have passed");
+  }
+  setTimeoutPromisified(3000).then(callback)
 
 console.log("----top of the file-----")
 function  readthefile(resolve) {
@@ -28,3 +28,19 @@ function  callback() {
     console.log("timer is done");
 }
 console.log("----end of the file----")
+
+
+function  thefunction(resolve) {
+    return setTimeout(() => {
+        resolve();
+    }, 3000);
+}
+function  thepromise() {
+    return new Promise(thefunction);
+}
+
+const a = thepromise();
+a.then(wtweneedto);
+function  wtweneedto() {
+    console.log(" etha promises uh , 3 sec ku aprm")
+}
