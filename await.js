@@ -14,3 +14,25 @@ function setTimeoutPromisified(ms) {
   }
 
   solve();
+
+// catch the error
+
+const fs = require('fs')
+
+function  readfil() {
+    return new Promise(function(resolve, reject) {
+        fs.readFile("test.txt", "utf-8", function(err, data) {
+            if(err){
+                reject("file doesnt exit");
+            }else{
+                resolve(data);
+            }
+        })
+    })
+}
+
+readfil().then(function(x) {
+    console.log("file has been read");
+}).catch(function(e) {
+    console.log(e);
+})
