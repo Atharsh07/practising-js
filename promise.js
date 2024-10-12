@@ -1,7 +1,7 @@
 
 // promises
 
-
+// example 1
 function setTimeoutPromisified(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -29,18 +29,16 @@ function  callback() {
 }
 console.log("----end of the file----")
 
-
-function  thefunction(resolve) {
+// example 2
+function  thepromise(resolve) {
     return setTimeout(() => {
         resolve();
     }, 3000);
 }
-function  thepromise() {
-    return new Promise(thefunction);
-}
-
-const a = thepromise();
+const a = new Promise(thepromise);
 a.then(wtweneedto);
 function  wtweneedto() {
     console.log(" etha promises uh , 3 sec ku aprm")
 }
+
+
