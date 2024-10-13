@@ -1,0 +1,9 @@
+Fetching elements
+There are 5 popular methods available for fetching DOM elements -
+querySelector
+querySelectorAll
+getElementById
+getElementByClassName
+getElementsByClassName
+
+
