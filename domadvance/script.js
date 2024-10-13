@@ -1,15 +1,13 @@
 let id = 1;
 function  addlist() {
-    const getelement = document.querySelector("input")
-    const value = getelement.value;
-    const newdiv = document.createElement("div")
-    newdiv.setAttribute("id", id)
-    newdiv.innerHTML = `<div>${value} <button onclick="todelete(${id})">delete</button></div>`
-    document.querySelector("body").appendChild(newdiv);
-    id = id + 1;
-}
+    const readtxt = document.querySelector("input")
+    const spanEl = document.createElement("span")
+    const buttonEl = document.createElement("button")
+    spanEl.innerHTML = readtxt.value;
+    buttonEl.innerHTML = "delete";
+    const newDiv = document.createElement("div")
+    newDiv.appendChild(spanEl)
+    newDiv.appendChild(buttonEl)
 
-function todelete(index) {
-    const element = document.getElementById(index)
-    element.parentNode.removeChild(element);
+    document.querySelector("body").appendChild(newDiv)
 }
