@@ -5,10 +5,9 @@ function todolist() {
 
     const newdiv = document.createElement("div");
     newdiv.setAttribute("id", id);
-    id = id + 1; // increment after setting the id
-    newdiv.innerHTML = `<div>${value} <button onclick="deletetoto(${id - 1})">delete</button> </div>`;
-
+    newdiv.innerHTML = `<div>${value} <button onclick="deletetoto(${id})">delete</button> </div>`;
     document.querySelector("body").appendChild(newdiv);
+    id = id + 1;
 }
 
 
