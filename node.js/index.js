@@ -21,5 +21,3 @@ app.get('/ride2', function(req, res) {
 })
 
 app.listen(3000);
-
-//
